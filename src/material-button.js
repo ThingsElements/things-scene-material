@@ -30,10 +30,11 @@ export default class MaterialButton extends HTMLOverlayElement {
 
   oncreate_element(button) {
 
+    button.classList.add('mdc-button', 'mdc-button--raised')
+
     ScriptLoader.load([
       'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js'
     ], 'https://unpkg.com/material-components-web@0.26.0/dist/material-components-web.min.css').then(() => {
-      this.element.classList.add('mdc-button', 'mdc-button--raised')
     }, error);
   }
 
@@ -47,7 +48,7 @@ export default class MaterialButton extends HTMLOverlayElement {
       value
     } = this.state
 
-    this.element.textContent = this.value
+    button.textContent = this.value
   }
 
   get tagName() {
